@@ -12,6 +12,7 @@ O Cálculo do Padrão Binário Local (LBP) é aplicado individualmente a cada pi
 https://github.com/otavio-barbosa/processamento-de-imagens/tree/main
 
 ## Classificador e acurácia
-![image](https://github.com/otavio-barbosa/processamento-de-imagens/assets/48487549/cba0d5f4-d6f4-4012-8c3f-3fd5018dd700)
+![image](https://github.com/otavio-barbosa/processamento-de-imagens/assets/48487549/8189833f-85c6-4d86-a071-32ff459d234d)
+
 
 
