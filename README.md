@@ -12,7 +12,7 @@ O Cálculo do Padrão Binário Local (LBP) é aplicado individualmente a cada pi
 https://github.com/otavio-barbosa/processamento-de-imagens/tree/main
 
 ## Classificador e acurácia
-
+Gradient boosting: uma técnica de aprendizado de conjunto que combina as previsões de vários modelos fracos, geralmente árvores de decisão, para criar um modelo preditivo robusto. Ele constrói árvores sequencialmente, corrigindo os erros dos modelos anteriores, resultando em um modelo preciso e robusto.
 
 ![image](https://github.com/otavio-barbosa/processamento-de-imagens/assets/48487549/77983e66-b597-4813-ad29-8af7b71eb441)
 
