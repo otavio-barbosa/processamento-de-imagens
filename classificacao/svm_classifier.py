@@ -62,13 +62,14 @@ def getCurrentFileNameAndDateTime():
     dateTime = datetime.now().strftime('-%d%m%Y-%H%M')
     return fileName+dateTime
 
-def plotConfusionMatrix(encoderClasses,testEncodedLabels,predictedLabels):
+def plotConfusionMatrix(encoderClasses, testEncodedLabels, predictedLabels):
     encoder = preprocessing.LabelEncoder()
     encoder.classes_ = encoderClasses
-    #Decoding test labels from numerical labels to string labels
-    test = encoder.inverse_transform(testEncodedLabels)
+    test = encoder.fit_transform(testEncodedLabels)
+    test = encoder.inverse_transform(test)
     #Decoding predicted labels from numerical labels to string labels
-    pred = encoder.inverse_transform(predictedLabels)
+    pred = encoder.fit_transform(predictedLabels)
+    pred = encoder.inverse_transform(pred)
     print(f'[INFO] Plotting confusion matrix and accuracy...')
     fig, ax = plt.subplots(figsize=(8, 6))
     metrics.ConfusionMatrixDisplay.from_predictions(test,pred,ax=ax, colorbar=False, cmap=plt.cm.Greens)
@@ -80,6 +81,7 @@ def plotConfusionMatrix(encoderClasses,testEncodedLabels,predictedLabels):
     print(f'[INFO] Close the figure window to end the program.')
     plt.show(block=False)
     return accuracy
+
 
 if __name__ == "__main__":
     main()

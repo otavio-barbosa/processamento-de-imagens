@@ -11,11 +11,13 @@ def main():
     testImagePath = './images_split/test/'
     trainFeaturePath = './features_labels/train/'
     testFeaturePath = './features_labels/test/'
+
     print(f'[INFO] ========= TRAINING IMAGES ========= ')
     trainImages, trainLabels = getData(trainImagePath)
     trainEncodedLabels, encoderClasses = encodeLabels(trainLabels)
     trainFeatures = extractGrayHistogramFeatures(trainImages)
     saveData(trainFeaturePath,trainEncodedLabels,trainFeatures,encoderClasses)
+    
     print(f'[INFO] =========== TEST IMAGES =========== ')
     testImages, testLabels = getData(testImagePath)
     testEncodedLabels, encoderClasses = encodeLabels(testLabels)
@@ -28,11 +30,11 @@ def getData(path):
     images = []
     labels = []
     if os.path.exists(path):
-        for dirpath, dirnames, filenames in os.walk(path):   
-            if (len(filenames) > 0): #it's inside a folder with files
+        for dirpath , dirnames , filenames in os.walk(path):   
+            if (len(filenames)>0): #it's inside a folder with files
                 folder_name = os.path.basename(dirpath)
-                bar = Bar(f'[INFO] Getting images and labels from {folder_name}', max=len(filenames), suffix='%(index)d/%(max)d Duration:%(elapsed)ds')
-                for _index, file in enumerate(filenames):
+                bar = Bar(f'[INFO] Getting images and labels from {folder_name}',max=len(filenames),suffix='%(index)d/%(max)d Duration:%(elapsed)ds')            
+                for index, file in enumerate(filenames):
                     label = folder_name
                     labels.append(label)
                     full_path = os.path.join(dirpath,file)
@@ -41,7 +43,7 @@ def getData(path):
                     bar.next()
                 bar.finish()
         #print(labels)
-        return images, np.array(labels, dtype=object)
+        return images, np.array(labels,dtype=object)
     
 def extractGrayHistogramFeatures(images):
     bar = Bar('[INFO] Extrating Gray histogram features...',max=len(images),suffix='%(index)d/%(max)d  Duration:%(elapsed)ds')
