@@ -16,6 +16,8 @@ https://github.com/otavio-barbosa/processamento-de-imagens/tree/main
 
 ![image](https://github.com/otavio-barbosa/processamento-de-imagens/assets/48487549/77983e66-b597-4813-ad29-8af7b71eb441)
 
+![image](https://github.com/otavio-barbosa/processamento-de-imagens/assets/48487549/4434bb61-de8c-477e-a13e-2ac407ee02ad)
+
 
 
 
